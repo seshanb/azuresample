@@ -1,4 +1,6 @@
-resource "azurerm_resource_group" "example" {
-  name     = var.resource_group_name
-  location = var.location
+data "azurerm_resource_groups" "example" {
+}
+
+output "resource_group_names" {
+  value = data.azurerm_resource_groups.example.names
 }
